@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Playground</title>
+  </head>
+  <body>
+    <h1>Open up your console</h1>
+
+    <script>
+      // Hoisting
+      var dog;
+      console.log(dog);
+      var dog = 'Ajko';
+
+      var dog1 = 'Rambo';
+      var dog2 = 'Ajko';
+
+      function dogName() {
+        var dog3 = 'Samojed';
+        if (!dog2) {
+          var dog2 = dog1;
+        }
+
+        // console.log(dog2);
+      }
+
+      dogName();
+
+      // Let and Const are block scoped
+      function dogName2() {
+        const dog4 = 'Ajko';
+        if (true) {
+          const dog5 = dog4;
+        }
+
+        if (dog5) {
+          // Cannot access dog5 from here
+          console.log('dog5', dog5);
+        }
+      }
+
+      dogName2();
+    </script>
+  </body>
+</html>
